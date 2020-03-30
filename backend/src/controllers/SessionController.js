@@ -4,15 +4,15 @@ module.exports = {
     async login(req, res) {
         const { id } = req.body;
 
-        const ong = await connection('ongs')
+        const ngo = await connection('ngos')
           .where('id', id)
           .select('name')
           .first();
 
-          if(!ong) {
-              res.status(400).json({ error: 'No ONG found with this ID' });
+          if(!ngo) {
+              res.status(400).json({ error: 'No NGO found with this ID' });
           }
 
-          return res.json(ong);
+          return res.json(ngo);
     }
 }

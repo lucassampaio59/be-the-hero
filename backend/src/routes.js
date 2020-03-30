@@ -1,5 +1,5 @@
 const express = require('express');
-const OngController = require('./controllers/OngController');
+const NgoController = require('./controllers/NgoController');
 const IncidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
 const SessionController = require('./controllers/SessionController');
@@ -10,8 +10,8 @@ const routes = express.Router();
 
 routes.post('/sessions', SessionController.login)
 
-routes.get('/ongs', OngController.index);
-routes.post('/ongs', OngController.create);
+routes.get('/ngos', NgoController.index);
+routes.post('/ngos', NgoController.create);
 
 routes.get('/profile', ProfileController.index);
 

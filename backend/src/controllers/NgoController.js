@@ -3,23 +3,23 @@ const crypto = require('crypto');
 
 module.exports = {
     async index(req, res) {
-        const ongs = await connection('ongs').select('*');
+        const ngos = await connection('ngos').select('*');
     
-        return res.json(ongs);
+        return res.json(ngos);
     },
 
     async create(req, res) {
-        const { name, email, whatsapp, city, uf } = req.body;
+        const { name, email, whatsapp, city, fu } = req.body;
 
         const id = crypto.randomBytes(4).toString('HEX');
     
-        await connection('ongs').insert({
+        await connection('ngos').insert({
             id,
             name,
             email,
             whatsapp,
             city,
-            uf
+            fu,
         })
     
         return res.json({ id });
