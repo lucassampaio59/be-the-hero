@@ -28,7 +28,7 @@ export default function Register() {
     };
 
     try {
-      const response = await api.post('ongs', data);
+      const response = await api.post('ngos', data);
 
       alert (`Your acess ID: ${response.data.id}`);
 
@@ -56,20 +56,20 @@ export default function Register() {
         <form onSubmit={handleRegister}>
           <input 
             placeholder="NGO Name" 
-            required="true"
+            required={true}
             value={name}
             onChange={event => setName(event.target.value)}
           />
           <input 
             type="email" 
             placeholder="E-mail" 
-            required="true"
+            required={true}
             value={email}
             onChange={event => setEmail(event.target.value)}
           />
           <input 
             placeholder="Whats-App"
-            required="true"
+            required={true}
             value={whatsapp}
             onChange={event => setWhatsapp(event.target.value)}
           />
@@ -77,13 +77,13 @@ export default function Register() {
           <div className="input-group">
             <input 
               placeholder="City"
-              required="true" 
+              required={true} 
               value={city}
               onChange={event => setCity(event.target.value)}
             />
             <input 
               placeholder="FU"
-              required="true"
+              required={true}
               maxLength="2"
               style={{ width: 80 }}
               value={fu}

@@ -19,7 +19,7 @@ module.exports = {
           'ngos.fu'
         ]);
 
-        res.header('X-Total-Count', count['count(*)']);
+        res.header('X-Total-Count', (count['count(*)'] - 1));
 
         return res.json(incidents);
     },
